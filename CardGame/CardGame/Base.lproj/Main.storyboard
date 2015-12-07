@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pz-vG-ase">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-tt-S7p">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="43J-ke-Qah"/>
+                                    <constraint firstAttribute="height" constant="162" id="7xk-VG-1Mk"/>
+                                    <constraint firstAttribute="width" constant="114" id="Lmh-v1-S1s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" backgroundImage="cardback">
+                                    <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="43J-ke-Qah"/>
+                                        <exclude reference="7xk-VG-1Mk"/>
+                                        <exclude reference="Lmh-v1-S1s"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="43J-ke-Qah"/>
+                                        <include reference="7xk-VG-1Mk"/>
+                                        <exclude reference="Lmh-v1-S1s"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="143" y="219" width="114" height="96"/>
+                                </variation>
+                                <connections>
+                                    <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIA-Ot-CiX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fy2-tt-S7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="0Ww-Ar-OcW"/>
+                            <constraint firstItem="1pz-vG-ase" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6kO-01-MJJ"/>
+                            <constraint firstItem="Fy2-tt-S7p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B22-qA-76l"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fy2-tt-S7p" secondAttribute="bottom" constant="219" id="C11-Qg-coH"/>
+                            <constraint firstItem="1pz-vG-ase" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hJH-g0-nhS"/>
+                            <constraint firstItem="Fy2-tt-S7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="199" id="kYw-iO-4cG"/>
+                            <constraint firstItem="Fy2-tt-S7p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kdJ-4A-WO0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fy2-tt-S7p" secondAttribute="trailing" constant="123" id="kiM-Ni-420"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1pz-vG-ase" secondAttribute="bottom" constant="20" id="uJx-rG-Hvl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1pz-vG-ase"/>
+                                <exclude reference="Fy2-tt-S7p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Ww-Ar-OcW"/>
+                                <exclude reference="B22-qA-76l"/>
+                                <exclude reference="kYw-iO-4cG"/>
+                                <exclude reference="kdJ-4A-WO0"/>
+                                <exclude reference="kiM-Ni-420"/>
+                                <exclude reference="6kO-01-MJJ"/>
+                                <exclude reference="hJH-g0-nhS"/>
+                                <exclude reference="C11-Qg-coH"/>
+                                <exclude reference="uJx-rG-Hvl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1pz-vG-ase"/>
+                                <include reference="Fy2-tt-S7p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Ww-Ar-OcW"/>
+                                <include reference="B22-qA-76l"/>
+                                <exclude reference="kYw-iO-4cG"/>
+                                <include reference="kdJ-4A-WO0"/>
+                                <exclude reference="kiM-Ni-420"/>
+                                <include reference="6kO-01-MJJ"/>
+                                <include reference="hJH-g0-nhS"/>
+                                <exclude reference="C11-Qg-coH"/>
+                                <include reference="uJx-rG-Hvl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="flipLabel" destination="1pz-vG-ase" id="9Pr-Kc-TkI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.5" y="329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cardback" width="64" height="96"/>
+    </resources>
+</document>
