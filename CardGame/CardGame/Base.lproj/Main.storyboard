@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -75,6 +76,8 @@
                                 <exclude reference="Fy2-tt-S7p"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="C11-Qg-coH"/>
+                                <exclude reference="uJx-rG-Hvl"/>
                                 <exclude reference="0Ww-Ar-OcW"/>
                                 <exclude reference="B22-qA-76l"/>
                                 <exclude reference="kYw-iO-4cG"/>
@@ -82,8 +85,6 @@
                                 <exclude reference="kiM-Ni-420"/>
                                 <exclude reference="6kO-01-MJJ"/>
                                 <exclude reference="hJH-g0-nhS"/>
-                                <exclude reference="C11-Qg-coH"/>
-                                <exclude reference="uJx-rG-Hvl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -92,6 +93,8 @@
                                 <include reference="Fy2-tt-S7p"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="C11-Qg-coH"/>
+                                <include reference="uJx-rG-Hvl"/>
                                 <exclude reference="0Ww-Ar-OcW"/>
                                 <include reference="B22-qA-76l"/>
                                 <exclude reference="kYw-iO-4cG"/>
@@ -99,8 +102,6 @@
                                 <exclude reference="kiM-Ni-420"/>
                                 <include reference="6kO-01-MJJ"/>
                                 <include reference="hJH-g0-nhS"/>
-                                <exclude reference="C11-Qg-coH"/>
-                                <include reference="uJx-rG-Hvl"/>
                             </mask>
                         </variation>
                     </view>
