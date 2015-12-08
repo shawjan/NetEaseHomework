@@ -6,8 +6,8 @@
 //  Copyright © 2015年 shawjan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface CardGameViewController : ViewController
+@interface CardGameViewController : UIViewController
 
 @end

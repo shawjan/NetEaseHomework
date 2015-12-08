@@ -12,7 +12,7 @@
 @interface CardMatchingGame ()
 @property(nonatomic, readwrite) NSInteger score;
 @property(nonatomic, strong) NSMutableArray *cardsMutArr;
-
+@property(nonatomic, assign) NSInteger chooseCardMatch;
 @end
 
 @implementation CardMatchingGame
@@ -42,6 +42,9 @@
     return self;
 }
 
+
+static const NSInteger PunishScore = 5;
+static const NSInteger Bonus = 2;
 -(void)chosenAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
@@ -49,23 +52,38 @@
         if(card.chosen){
             card.chosen = NO;
         }else{
+            NSMutableArray *otherCards = [NSMutableArray array];
             for (int i = 0; i < [self.cardsMutArr count]; ++i) {
                 Card *otherCard = self.cardsMutArr[i];
                 if(otherCard.chosen && !otherCard.matched){
-                    NSInteger matchScore = [card matchedOrNot:@[otherCard]];
-                    if(matchScore){
-                        self.score += matchScore;
-                        card.matched = YES;
-                        otherCard.matched = YES;
-                    }else{
-                        otherCard.chosen = NO;
-                        card.chosen = NO;
-                    }
-                    break;
+                    [otherCards addObject:otherCard];
                 }
             }
+            if([otherCards count] + 1 == self.chooseCardMatch){
+                NSInteger matchScore = [card matchedOrNot:otherCards];
+                if(matchScore){
+                    self.score += matchScore * Bonus;
+                    card.matched = YES;
+                    for (Card *otherCard in otherCards) {
+                        otherCard.matched = YES;
+                    }
+                }else{
+                    self.score -= PunishScore;
+                    card.chosen = NO;
+                    for(Card *otherCard in otherCards){
+                        otherCard.chosen = NO;
+                    }
+                }
+            }
+            card.chosen = YES;
         }
     }
+}
+
+-(void)chosenAtIndex:(NSUInteger)index cardsMatchCount:(NSUInteger)count
+{
+    self.chooseCardMatch = count;
+    [self chosenAtIndex:index];
 }
 
 -(Card *)cardAtIndex:(NSUInteger)index

@@ -16,6 +16,7 @@
 -(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck*)deck;
 
 -(void)chosenAtIndex:(NSUInteger)index;
+-(void)chosenAtIndex:(NSUInteger)index cardsMatchCount:(NSUInteger)count;
 -(Card*)cardAtIndex:(NSUInteger)index;
 
 

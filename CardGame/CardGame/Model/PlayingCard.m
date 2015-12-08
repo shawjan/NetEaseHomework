@@ -50,4 +50,23 @@
     return [self.suit stringByAppendingString:rankStrings[self.rank]];
 }
 
+-(int)matchedOrNot:(NSArray *)otherCards
+{
+    int suitScore = 0, rankScore = 0, score = 0;
+    for(PlayingCard *card in otherCards){
+        if([self.suit isEqualToString:card.suit]){
+            suitScore += 1;
+        }else if(self.rank == card.rank){
+            rankScore += 1;
+        }
+    }
+    if(suitScore == [otherCards count]){
+        return suitScore * 1;
+    }
+    if(rankScore == [otherCards count]){
+        return rankScore * 4;
+    }
+    return score;
+}
+
 @end
