@@ -18,6 +18,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardChooseSegment;
 @property (weak, nonatomic) IBOutlet UIScrollView *cardCanvasScrollView;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLab;
 @end
 
@@ -55,11 +56,20 @@ static const NSInteger ButtonHeight = 96;
     }
     return [buttonsArray copy];
 }
+- (IBAction)historyStatesSliderValueChange:(UISlider *)sender {
+    NSInteger historyStep = sender.value;
+    if(historyStep < [self.game.history count]){
+        self.tipsLab.text = [NSString stringWithFormat:@"The %ld step: \n  %@", historyStep + 1, self.game.history[historyStep]];
+    }else{
+        self.tipsLab.text = tips;
+    }
+}
 
+static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 points\n  Match J♠︎ and K♠︎ for 1 point\n  6♠︎ and J♣︎ don't matched! 2 points penalty!";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tipsLab.text = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 points\n  Match J♠︎ and K♠︎ for 1 point\n  6♠︎ and J♣︎ don't matched! 2 points penalty!";
+    self.tipsLab.text = tips;
     self.cardButtonsArray = [self creatButtons];
 }
 
@@ -77,6 +87,7 @@ static const NSInteger ButtonHeight = 96;
 }
 
 - (IBAction)CardButton:(UIButton *)sender {
+    self.cardChooseSegment.enabled = NO;
     NSUInteger index = [self.cardButtonsArray indexOfObject:sender];
     //[self.game chosenAtIndex:index];
     [self.game chosenAtIndex:index cardsMatchCount:self.cardChooseSegment.selectedSegmentIndex ? 3 : 2];
@@ -85,12 +96,15 @@ static const NSInteger ButtonHeight = 96;
 - (IBAction)resetGameButton:(UIButton *)sender {
     self.deckCard = nil;
     self.game = nil;
+    self.cardChooseSegment.enabled = YES;
     [self updateUI];
 }
 
 
 - (void)updateUI
 {
+    self.historySlider.value = self.historySlider.maximumValue = [self.game.history count];
+    self.tipsLab.text = tips;
     for(int i = 0; i < [self.cardButtonsArray count]; ++i){
         Card * card = [self.game cardAtIndex:i];
         UIButton *btn = [self.cardButtonsArray objectAtIndex:i];

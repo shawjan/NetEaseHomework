@@ -13,6 +13,7 @@
 @property(nonatomic, readwrite) NSInteger score;
 @property(nonatomic, strong) NSMutableArray *cardsMutArr;
 @property(nonatomic, assign) NSInteger chooseCardMatch;
+@property(nonatomic, strong, readwrite) NSMutableArray *history;
 @end
 
 @implementation CardMatchingGame
@@ -23,6 +24,14 @@
         _cardsMutArr = [[NSMutableArray alloc] init];
     }
     return _cardsMutArr;
+}
+
+-(NSMutableArray *)history
+{
+    if(!_history){
+        _history = [[NSMutableArray alloc] init];
+    }
+    return _history;
 }
 
 -(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
@@ -74,10 +83,23 @@ static const NSInteger Bonus = 2;
                         otherCard.chosen = NO;
                     }
                 }
+                [self.history addObject:[self historyContent:card
+                                                   withCards:otherCards
+                                                   matchScore:matchScore]];
             }
             card.chosen = YES;
         }
     }
+}
+
+-(NSString*)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore
+{
+    NSString *hisStr = [NSString stringWithFormat:@"%@ %@", card.contents, matchScore ? @"matched " : @"didn't match "];
+    for(Card *card in cards){
+        hisStr = [hisStr stringByAppendingString:[NSString stringWithFormat:@"%@ ", card.contents]];
+    }
+    hisStr = [hisStr stringByAppendingString:[NSString stringWithFormat:@"for %ld point(s)", (matchScore ? matchScore * Bonus : (0 - PunishScore))]];
+    return hisStr;
 }
 
 -(void)chosenAtIndex:(NSUInteger)index cardsMatchCount:(NSUInteger)count
