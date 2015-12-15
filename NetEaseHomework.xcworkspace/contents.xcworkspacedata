@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SuperCard/SuperCard.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Attributor/Attributor.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CardGame/CardGame.xcodeproj">
    </FileRef>
 </Workspace>

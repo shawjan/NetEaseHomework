@@ -7,55 +7,16 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayCardDeck.h"
-#import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
-@property (nonatomic, strong) PlayCardDeck *deckCard;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *CardButtons;
-@property (strong, nonatomic) NSArray *cardButtonsArray;
-@property (weak, nonatomic) IBOutlet UILabel *tipsLab;
-@property (strong, nonatomic) CardMatchingGame *game;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *cardChooseSegment;
-@property (weak, nonatomic) IBOutlet UIScrollView *cardCanvasScrollView;
-@property (weak, nonatomic) IBOutlet UISlider *historySlider;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLab;
+
 @end
 
 @implementation CardGameViewController
 
 
--(CardMatchingGame *)game
-{
-    if(!_game){
-        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtonsArray count]
-                                                  usingDeck:self.deckCard];
-    }
-    return _game;
-}
-
-
-static const NSInteger ButtonCount = 30;
-static const NSInteger ButtonGap = 8;
-static const NSInteger ButtonWidth = 64;
-static const NSInteger ButtonHeight = 96;
--(NSArray*)creatButtons
-{
-    NSMutableArray *buttonsArray = [NSMutableArray array];
-    self.cardCanvasScrollView.contentSize = CGSizeMake(ButtonCount / 3 * (ButtonWidth + ButtonGap), self.cardCanvasScrollView.bounds.size.height);
-    for(int i = 0; i < 3; ++i){
-        for(int j = 0; j < ButtonCount / 3; ++j)
-        {
-            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(j * (ButtonGap + ButtonWidth), i * (ButtonGap + ButtonHeight), ButtonWidth, ButtonHeight)];
-            [btn addTarget:self action:@selector(CardButton:) forControlEvents:UIControlEventTouchUpInside];
-            [btn setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [buttonsArray addObject:btn];
-            [self.cardCanvasScrollView addSubview:btn];
-        }
-    }
-    return [buttonsArray copy];
-}
+/*
 - (IBAction)historyStatesSliderValueChange:(UISlider *)sender {
     NSInteger historyStep = sender.value;
     if(historyStep < [self.game.history count]){
@@ -64,13 +25,13 @@ static const NSInteger ButtonHeight = 96;
         self.tipsLab.text = tips;
     }
 }
+*/
 
-static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 points\n  Match J♠︎ and K♠︎ for 1 point\n  6♠︎ and J♣︎ don't matched! 2 points penalty!";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tipsLab.text = tips;
-    self.cardButtonsArray = [self creatButtons];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,13 +39,7 @@ static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 point
     // Dispose of any resources that can be recreated.
 }
 
--(PlayCardDeck *)deckCard
-{
-    if(!_deckCard){
-        _deckCard = [[PlayCardDeck alloc] init];
-    }
-    return _deckCard;
-}
+
 
 - (IBAction)CardButton:(UIButton *)sender {
     self.cardChooseSegment.enabled = NO;
@@ -93,8 +48,9 @@ static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 point
     [self.game chosenAtIndex:index cardsMatchCount:self.cardChooseSegment.selectedSegmentIndex ? 3 : 2];
     [self updateUI];
 }
-- (IBAction)resetGameButton:(UIButton *)sender {
-    self.deckCard = nil;
+
+- (IBAction)resetGameButton:(UIBarButtonItem *)sender {
+    self.card = nil;
     self.game = nil;
     self.cardChooseSegment.enabled = YES;
     [self updateUI];
@@ -103,8 +59,8 @@ static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 point
 
 - (void)updateUI
 {
-    self.historySlider.value = self.historySlider.maximumValue = [self.game.history count];
-    self.tipsLab.text = tips;
+   // self.historySlider.value = self.historySlider.maximumValue = [self.game.history count];
+    //self.tipsLab.text = tips;
     for(int i = 0; i < [self.cardButtonsArray count]; ++i){
         Card * card = [self.game cardAtIndex:i];
         UIButton *btn = [self.cardButtonsArray objectAtIndex:i];
@@ -126,14 +82,17 @@ static NSString *const tips = @"Tips:\n  Matched J♠︎ and J♣︎ for 4 point
     self.scoreLab.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"CardGameHistory"]){
+        
+    }
 }
-*/
+
 
 @end
