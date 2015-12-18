@@ -7,16 +7,26 @@
 //
 
 #import "SuperCardViewController.h"
+#import "SuperCardView.h"
 
 @interface SuperCardViewController ()
+@property (weak, nonatomic) IBOutlet SuperCardView *superCardView;
 
 @end
 
 @implementation SuperCardViewController
+- (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender {
+    self.superCardView.faceUp = !self.superCardView.faceUp;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.superCardView.rank = 13;
+    self.superCardView.suit = @"♥︎";
+    
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self.superCardView action:@selector(pinchAction:)];
+    [self.superCardView addGestureRecognizer:pinchGesture];
 }
 
 - (void)didReceiveMemoryWarning {

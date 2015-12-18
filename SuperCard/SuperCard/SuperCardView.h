@@ -10,4 +10,10 @@
 
 @interface SuperCardView : UIView
 
+@property(nonatomic, assign) NSUInteger rank;
+@property(nonatomic, strong) NSString *suit;
+@property(nonatomic,  assign) BOOL faceUp;
+
+-(void)pinchAction:(UIPinchGestureRecognizer*)pinchGesture;
+
 @end
