@@ -11,12 +11,14 @@
 
 @interface PlayingCardSet : Card
 
-@property(nonatomic, strong) NSString *shape;
-@property(nonatomic, strong) NSString *color;
-@property(nonatomic, strong) NSString *rank;
+@property(nonatomic, assign) NSString *shape;
+@property(nonatomic, assign) NSString *color;
+@property(nonatomic, assign) NSString *rank;
 
 +(NSArray *)validColor;
 +(NSArray *)validRank;
 +(NSArray *)validShape;
 
++(UIColor*)getColor:(NSString*)color;
++(NSAttributedString*)getContents:(Card*)card;
 @end

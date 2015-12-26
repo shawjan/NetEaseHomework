@@ -13,10 +13,13 @@
 @interface CardGameViewController : UIViewController
 @property (nonatomic, strong) Deck *card;
 @property (strong, nonatomic) NSArray *cardButtonsArray;
-@property (weak, nonatomic) IBOutlet UILabel *tipsLab;
 @property (strong, nonatomic) CardMatchingGame *game;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLab;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *cardChooseSegment;
+@property (strong, nonatomic) UILabel *scoreLab;
+@property(nonatomic, readonly) NSNumber *highestScore;
+@property(nonatomic, readonly) NSNumber *lowestScore;
 
-- (IBAction)CardButton:(UIButton *)sender;
+- (void)CardButton:(UIButton *)sender;
+- (void)resetGameButton:(UIBarButtonItem *)sender;
+-(UIButton*)setButtonTitle:(UIButton*)button withCard:(Card*)card;
+-(void) updateUI;
 @end

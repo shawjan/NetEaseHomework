@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A04944D1C2659CD00B2B411 /* PathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A04944C1C2659CD00B2B411 /* PathView.m */; };
 		2A7F00641C24060F00587981 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F00631C24060F00587981 /* main.m */; };
 		2A7F00671C24060F00587981 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F00661C24060F00587981 /* AppDelegate.m */; };
 		2A7F006A1C24060F00587981 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F00691C24060F00587981 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A04944B1C2659CD00B2B411 /* PathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathView.h; sourceTree = "<group>"; };
+		2A04944C1C2659CD00B2B411 /* PathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathView.m; sourceTree = "<group>"; };
 		2A7F005F1C24060E00587981 /* DropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7F00631C24060F00587981 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A7F00651C24060F00587981 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				2A7F00701C24060F00587981 /* LaunchScreen.storyboard */,
 				2A7F00731C24060F00587981 /* Info.plist */,
 				2A7F00621C24060E00587981 /* Supporting Files */,
+				2A04944B1C2659CD00B2B411 /* PathView.h */,
+				2A04944C1C2659CD00B2B411 /* PathView.m */,
 			);
 			path = DropIt;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				2A7F006A1C24060F00587981 /* ViewController.m in Sources */,
 				2A7F00971C240E5100587981 /* DropItBehavior.m in Sources */,
 				2A7F00671C24060F00587981 /* AppDelegate.m in Sources */,
+				2A04944D1C2659CD00B2B411 /* PathView.m in Sources */,
 				2A7F00641C24060F00587981 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +508,7 @@
 				2A7F008E1C24061000587981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A7F008F1C24061000587981 /* Build configuration list for PBXNativeTarget "DropItTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				2A7F00911C24061000587981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A7F00921C24061000587981 /* Build configuration list for PBXNativeTarget "DropItUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				2A7F00941C24061000587981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

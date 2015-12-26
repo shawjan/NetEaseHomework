@@ -18,20 +18,20 @@
 
 @implementation CardMatchingGame
 
--(NSMutableArray *)cardsMutArr
-{
-    if (!_cardsMutArr) {
-        _cardsMutArr = [[NSMutableArray alloc] init];
-    }
-    return _cardsMutArr;
-}
-
 -(NSMutableArray *)history
 {
     if(!_history){
         _history = [[NSMutableArray alloc] init];
     }
     return _history;
+}
+
+-(NSMutableArray *)cardsMutArr
+{
+    if(!_cardsMutArr){
+        _cardsMutArr = [[NSMutableArray alloc] init];
+    }
+    return _cardsMutArr;
 }
 
 -(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
@@ -92,7 +92,7 @@ static const NSInteger Bonus = 2;
     }
 }
 
--(NSString*)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore
+-(id)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore
 {
     NSString *hisStr = [NSString stringWithFormat:@"%@ %@", card.contents, matchScore > 0 ? @"matched " : @"didn't match "];
     for(Card *card in cards){

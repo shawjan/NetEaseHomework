@@ -12,7 +12,7 @@
         <!--Set Game-->
         <scene sceneID="QTM-Eb-0Uv">
             <objects>
-                <viewController id="BLh-za-j45" sceneMemberID="viewController">
+                <viewController id="BLh-za-j45" customClass="SetCardGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EJJ-90-MIB"/>
                         <viewControllerLayoutGuide type="bottom" id="H5t-FD-YgN"/>
@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="64" id="x4w-wC-M7u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -59,6 +59,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="fcL-NS-NKu"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kdg-Mv-BM9"/>
                                 </connections>
                             </button>
@@ -70,7 +71,7 @@
                                     <constraint firstAttribute="height" constant="162" id="qWE-2a-djN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -88,6 +89,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="aYg-kd-vuu"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jtS-ih-k2R"/>
                                 </connections>
                             </button>
@@ -99,7 +101,7 @@
                                     <constraint firstAttribute="width" constant="114" id="Tp7-83-fFz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -117,6 +119,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="4bR-hG-JP6"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k6o-Q4-PzK"/>
                                 </connections>
                             </button>
@@ -128,7 +131,7 @@
                                     <constraint firstAttribute="height" constant="162" id="emc-jv-7vx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -147,6 +150,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97x-OA-gQo"/>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="Y4P-ws-MT1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-Ux-DC3">
@@ -157,7 +161,7 @@
                                     <constraint firstAttribute="height" constant="162" id="pCV-Db-1hr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -175,6 +179,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="1ae-du-7zg"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thj-KP-JvZ"/>
                                 </connections>
                             </button>
@@ -186,7 +191,7 @@
                                     <constraint firstAttribute="width" constant="114" id="wgP-la-Sxt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -205,6 +210,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jLR-DC-HAp"/>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="jUc-6d-Uja"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-W6-9ym">
@@ -215,7 +221,7 @@
                                     <constraint firstAttribute="height" constant="162" id="vaq-ze-act"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -234,6 +240,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRG-1U-w2M"/>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="as7-XV-ipG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-8s-Di8">
@@ -244,7 +251,7 @@
                                     <constraint firstAttribute="height" constant="162" id="RiO-8J-5zW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -263,6 +270,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5AJ-ER-vMs"/>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="fqW-Gt-t0p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-Hc-r62">
@@ -273,7 +281,7 @@
                                     <constraint firstAttribute="height" constant="162" id="qZe-vt-dSE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -291,48 +299,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="RRl-D2-7zP"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwV-hV-Zfh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="980-gh-bpe">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="RgX-CC-ad4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="RgX-CC-ad4"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="RgX-CC-ad4"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips: " lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGn-aI-HsU">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="euh-aa-pTd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="euh-aa-pTd"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="euh-aa-pTd"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ1-le-BhB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -392,7 +362,7 @@
                                     <constraint firstAttribute="width" constant="114" id="uEw-Le-DfX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -410,6 +380,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="FEn-Cd-qq5"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdY-Th-9jp"/>
                                 </connections>
                             </button>
@@ -421,7 +392,7 @@
                                     <constraint firstAttribute="width" constant="114" id="h6f-ud-foj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -439,6 +410,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="uhG-C2-u3u"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcT-UJ-HZt"/>
                                 </connections>
                             </button>
@@ -450,7 +422,7 @@
                                     <constraint firstAttribute="width" constant="114" id="tvr-Eb-3ta"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="cardback">
+                                <state key="normal">
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -468,9 +440,49 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="CardButton:" destination="BLh-za-j45" eventType="touchUpInside" id="8tq-Oc-q1s"/>
                                     <action selector="CardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQw-j9-LnT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="980-gh-bpe">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="RgX-CC-ad4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RgX-CC-ad4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="RgX-CC-ad4"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips: " lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGn-aI-HsU">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="euh-aa-pTd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="euh-aa-pTd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="euh-aa-pTd"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -499,6 +511,7 @@
                             <constraint firstItem="f5a-2f-xDq" firstAttribute="leading" secondItem="hJG-Ux-DC3" secondAttribute="trailing" priority="250" constant="37" id="FmV-mX-dB7"/>
                             <constraint firstItem="gzj-W6-9ym" firstAttribute="width" secondItem="lEb-19-3Fo" secondAttribute="width" id="G1L-s9-l3Y"/>
                             <constraint firstItem="t9B-ud-wbd" firstAttribute="top" secondItem="lEb-19-3Fo" secondAttribute="bottom" constant="8" id="HE3-E9-TV4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="980-gh-bpe" secondAttribute="trailing" id="IE7-rj-IDO"/>
                             <constraint firstItem="3i3-6r-7TQ" firstAttribute="height" secondItem="lEb-19-3Fo" secondAttribute="height" id="Ivg-Fh-VdQ"/>
                             <constraint firstItem="bGn-aI-HsU" firstAttribute="top" secondItem="980-gh-bpe" secondAttribute="bottom" constant="8" id="LtY-gI-ojU"/>
                             <constraint firstItem="eHR-0k-0N2" firstAttribute="height" secondItem="lEb-19-3Fo" secondAttribute="height" id="MX8-iB-FBT"/>
@@ -526,6 +539,7 @@
                             <constraint firstItem="JZf-rR-lEc" firstAttribute="leading" secondItem="eZ9-9a-LPQ" secondAttribute="leading" id="fHH-Ac-JrW"/>
                             <constraint firstItem="eZ9-9a-LPQ" firstAttribute="width" secondItem="lEb-19-3Fo" secondAttribute="height" multiplier="2:3" id="gZT-FH-AQG"/>
                             <constraint firstItem="f5a-2f-xDq" firstAttribute="height" secondItem="lEb-19-3Fo" secondAttribute="height" id="gyU-c3-bKN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bGn-aI-HsU" secondAttribute="trailing" id="iK1-7g-7te"/>
                             <constraint firstItem="gzj-W6-9ym" firstAttribute="leading" secondItem="lEb-19-3Fo" secondAttribute="leading" id="j39-GX-kee"/>
                             <constraint firstItem="gzj-W6-9ym" firstAttribute="height" secondItem="lEb-19-3Fo" secondAttribute="height" id="joB-lh-dlh"/>
                             <constraint firstItem="0cd-Hc-r62" firstAttribute="top" secondItem="gzj-W6-9ym" secondAttribute="top" id="lw4-dx-hH4"/>
@@ -548,7 +562,9 @@
                             <constraint firstItem="gwl-4p-hZq" firstAttribute="leading" secondItem="XJY-rx-r3F" secondAttribute="trailing" constant="-1" id="uod-00-P0W"/>
                             <constraint firstItem="XJY-rx-r3F" firstAttribute="top" secondItem="lEb-19-3Fo" secondAttribute="top" id="utc-NO-Ot0"/>
                             <constraint firstItem="XJY-rx-r3F" firstAttribute="width" secondItem="3Fj-Wt-IqZ" secondAttribute="width" multiplier="0.09" priority="753" id="uxy-s9-Afs"/>
-                            <constraint firstItem="980-gh-bpe" firstAttribute="top" secondItem="gzj-W6-9ym" secondAttribute="bottom" constant="27" id="vSk-KB-CqS"/>
+                            <constraint firstItem="980-gh-bpe" firstAttribute="top" secondItem="gzj-W6-9ym" secondAttribute="bottom" constant="27" id="vSk-KB-CqS">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
                             <constraint firstItem="N3Y-bh-ng8" firstAttribute="leading" secondItem="eZ9-9a-LPQ" secondAttribute="trailing" constant="-1" id="vXO-5h-vZy">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -574,46 +590,21 @@
                                 <exclude reference="gzj-W6-9ym"/>
                                 <exclude reference="SDA-8s-Di8"/>
                                 <exclude reference="0cd-Hc-r62"/>
-                                <exclude reference="980-gh-bpe"/>
-                                <exclude reference="bGn-aI-HsU"/>
                                 <exclude reference="HJ1-le-BhB"/>
                                 <exclude reference="XJY-rx-r3F"/>
                                 <exclude reference="N3Y-bh-ng8"/>
                                 <exclude reference="eZ9-9a-LPQ"/>
                                 <exclude reference="3i3-6r-7TQ"/>
                                 <exclude reference="JZf-rR-lEc"/>
+                                <exclude reference="980-gh-bpe"/>
+                                <exclude reference="bGn-aI-HsU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8xg-ot-n8O"/>
-                                <exclude reference="TZq-lo-D4K"/>
-                                <exclude reference="vSk-KB-CqS"/>
-                                <exclude reference="LtY-gI-ojU"/>
-                                <exclude reference="7gL-Rv-Keb"/>
-                                <exclude reference="bhA-9E-nKu"/>
-                                <exclude reference="e9J-Yz-wry"/>
-                                <exclude reference="lw4-dx-hH4"/>
-                                <exclude reference="zfg-e9-PCC"/>
-                                <exclude reference="Bqe-BD-EsF"/>
-                                <exclude reference="Ivg-Fh-VdQ"/>
-                                <exclude reference="quy-tG-dJk"/>
-                                <exclude reference="tyL-jU-XAB"/>
-                                <exclude reference="xoH-PL-IHT"/>
-                                <exclude reference="AHB-57-Lfq"/>
-                                <exclude reference="F1s-NH-akj"/>
-                                <exclude reference="SLk-zA-qtx"/>
-                                <exclude reference="Txp-YE-iMM"/>
-                                <exclude reference="fHH-Ac-JrW"/>
-                                <exclude reference="BV1-WM-Geo"/>
-                                <exclude reference="XDm-TV-JN6"/>
-                                <exclude reference="mso-Kg-7nf"/>
-                                <exclude reference="tCn-eX-jpj"/>
-                                <exclude reference="za5-wg-tjg"/>
-                                <exclude reference="C8d-YN-wxn"/>
-                                <exclude reference="MX8-iB-FBT"/>
-                                <exclude reference="QZ0-gv-zAv"/>
-                                <exclude reference="pBS-84-Lzd"/>
-                                <exclude reference="sLp-ir-yDN"/>
-                                <exclude reference="wqp-mp-D0c"/>
+                                <exclude reference="wlk-Xr-sXn"/>
+                                <exclude reference="z1C-z2-LLU"/>
+                                <exclude reference="94a-ka-LFR"/>
+                                <exclude reference="F0b-7P-XpZ"/>
+                                <exclude reference="TTA-JO-kLx"/>
                                 <exclude reference="4yh-jv-HVq"/>
                                 <exclude reference="WaT-U2-zx6"/>
                                 <exclude reference="exv-S6-ry2"/>
@@ -621,11 +612,45 @@
                                 <exclude reference="qD3-QB-WuD"/>
                                 <exclude reference="xUt-3l-LiW"/>
                                 <exclude reference="zQV-hx-ErB"/>
-                                <exclude reference="85L-hT-Z20"/>
-                                <exclude reference="AOT-9F-sq5"/>
-                                <exclude reference="ETg-eU-fbe"/>
-                                <exclude reference="FmV-mX-dB7"/>
-                                <exclude reference="gyU-c3-bKN"/>
+                                <exclude reference="8RT-JJ-XvT"/>
+                                <exclude reference="Anh-y0-0ep"/>
+                                <exclude reference="HE3-E9-TV4"/>
+                                <exclude reference="oiR-9q-bzo"/>
+                                <exclude reference="Cgc-pX-GTL"/>
+                                <exclude reference="Dtu-aH-I9h"/>
+                                <exclude reference="vXO-5h-vZy"/>
+                                <exclude reference="wqs-UI-d44"/>
+                                <exclude reference="zxs-Yk-iep"/>
+                                <exclude reference="Bqe-BD-EsF"/>
+                                <exclude reference="Ivg-Fh-VdQ"/>
+                                <exclude reference="quy-tG-dJk"/>
+                                <exclude reference="tyL-jU-XAB"/>
+                                <exclude reference="xoH-PL-IHT"/>
+                                <exclude reference="C8d-YN-wxn"/>
+                                <exclude reference="MX8-iB-FBT"/>
+                                <exclude reference="QZ0-gv-zAv"/>
+                                <exclude reference="pBS-84-Lzd"/>
+                                <exclude reference="sLp-ir-yDN"/>
+                                <exclude reference="wqp-mp-D0c"/>
+                                <exclude reference="DZb-fh-6eL"/>
+                                <exclude reference="OqR-kA-72P"/>
+                                <exclude reference="TWZ-M4-2WH"/>
+                                <exclude reference="c1U-Tz-Xa6"/>
+                                <exclude reference="udf-KV-oqL"/>
+                                <exclude reference="G1L-s9-l3Y"/>
+                                <exclude reference="SmO-M6-zme"/>
+                                <exclude reference="j39-GX-kee"/>
+                                <exclude reference="joB-lh-dlh"/>
+                                <exclude reference="djc-ky-QRK"/>
+                                <exclude reference="fB9-FY-YOu"/>
+                                <exclude reference="r6h-MR-uEW"/>
+                                <exclude reference="utc-NO-Ot0"/>
+                                <exclude reference="uxy-s9-Afs"/>
+                                <exclude reference="AHB-57-Lfq"/>
+                                <exclude reference="F1s-NH-akj"/>
+                                <exclude reference="SLk-zA-qtx"/>
+                                <exclude reference="Txp-YE-iMM"/>
+                                <exclude reference="fHH-Ac-JrW"/>
                                 <exclude reference="8qs-p8-lxC"/>
                                 <exclude reference="DTo-RH-rL9"/>
                                 <exclude reference="WVS-oD-Acw"/>
@@ -634,34 +659,27 @@
                                 <exclude reference="pWp-sC-7Zz"/>
                                 <exclude reference="tdy-Ta-xaa"/>
                                 <exclude reference="uod-00-P0W"/>
-                                <exclude reference="G1L-s9-l3Y"/>
-                                <exclude reference="SmO-M6-zme"/>
-                                <exclude reference="j39-GX-kee"/>
-                                <exclude reference="joB-lh-dlh"/>
-                                <exclude reference="DZb-fh-6eL"/>
-                                <exclude reference="OqR-kA-72P"/>
-                                <exclude reference="TWZ-M4-2WH"/>
-                                <exclude reference="c1U-Tz-Xa6"/>
-                                <exclude reference="udf-KV-oqL"/>
-                                <exclude reference="wlk-Xr-sXn"/>
-                                <exclude reference="z1C-z2-LLU"/>
-                                <exclude reference="8RT-JJ-XvT"/>
-                                <exclude reference="Anh-y0-0ep"/>
-                                <exclude reference="HE3-E9-TV4"/>
-                                <exclude reference="oiR-9q-bzo"/>
-                                <exclude reference="94a-ka-LFR"/>
-                                <exclude reference="F0b-7P-XpZ"/>
-                                <exclude reference="TTA-JO-kLx"/>
-                                <exclude reference="Cgc-pX-GTL"/>
-                                <exclude reference="Dtu-aH-I9h"/>
-                                <exclude reference="vXO-5h-vZy"/>
-                                <exclude reference="wqs-UI-d44"/>
-                                <exclude reference="zxs-Yk-iep"/>
-                                <exclude reference="djc-ky-QRK"/>
-                                <exclude reference="fB9-FY-YOu"/>
-                                <exclude reference="r6h-MR-uEW"/>
-                                <exclude reference="utc-NO-Ot0"/>
-                                <exclude reference="uxy-s9-Afs"/>
+                                <exclude reference="BV1-WM-Geo"/>
+                                <exclude reference="XDm-TV-JN6"/>
+                                <exclude reference="mso-Kg-7nf"/>
+                                <exclude reference="tCn-eX-jpj"/>
+                                <exclude reference="za5-wg-tjg"/>
+                                <exclude reference="85L-hT-Z20"/>
+                                <exclude reference="AOT-9F-sq5"/>
+                                <exclude reference="ETg-eU-fbe"/>
+                                <exclude reference="FmV-mX-dB7"/>
+                                <exclude reference="gyU-c3-bKN"/>
+                                <exclude reference="8xg-ot-n8O"/>
+                                <exclude reference="IE7-rj-IDO"/>
+                                <exclude reference="TZq-lo-D4K"/>
+                                <exclude reference="vSk-KB-CqS"/>
+                                <exclude reference="7gL-Rv-Keb"/>
+                                <exclude reference="bhA-9E-nKu"/>
+                                <exclude reference="e9J-Yz-wry"/>
+                                <exclude reference="lw4-dx-hH4"/>
+                                <exclude reference="zfg-e9-PCC"/>
+                                <exclude reference="LtY-gI-ojU"/>
+                                <exclude reference="iK1-7g-7te"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -675,56 +693,65 @@
                                 <include reference="gzj-W6-9ym"/>
                                 <include reference="SDA-8s-Di8"/>
                                 <include reference="0cd-Hc-r62"/>
-                                <include reference="980-gh-bpe"/>
-                                <include reference="bGn-aI-HsU"/>
                                 <include reference="HJ1-le-BhB"/>
                                 <include reference="XJY-rx-r3F"/>
                                 <include reference="N3Y-bh-ng8"/>
                                 <include reference="eZ9-9a-LPQ"/>
                                 <include reference="3i3-6r-7TQ"/>
                                 <include reference="JZf-rR-lEc"/>
+                                <include reference="980-gh-bpe"/>
+                                <include reference="bGn-aI-HsU"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="8xg-ot-n8O"/>
-                                <include reference="TZq-lo-D4K"/>
-                                <include reference="vSk-KB-CqS"/>
-                                <include reference="LtY-gI-ojU"/>
-                                <exclude reference="7gL-Rv-Keb"/>
-                                <include reference="bhA-9E-nKu"/>
-                                <include reference="e9J-Yz-wry"/>
-                                <include reference="lw4-dx-hH4"/>
-                                <include reference="zfg-e9-PCC"/>
-                                <include reference="Bqe-BD-EsF"/>
-                                <include reference="Ivg-Fh-VdQ"/>
-                                <include reference="quy-tG-dJk"/>
-                                <include reference="tyL-jU-XAB"/>
-                                <exclude reference="xoH-PL-IHT"/>
-                                <include reference="AHB-57-Lfq"/>
-                                <include reference="F1s-NH-akj"/>
-                                <exclude reference="SLk-zA-qtx"/>
-                                <include reference="Txp-YE-iMM"/>
-                                <include reference="fHH-Ac-JrW"/>
-                                <include reference="BV1-WM-Geo"/>
-                                <exclude reference="XDm-TV-JN6"/>
-                                <include reference="mso-Kg-7nf"/>
-                                <include reference="tCn-eX-jpj"/>
-                                <include reference="za5-wg-tjg"/>
-                                <include reference="MX8-iB-FBT"/>
-                                <include reference="QZ0-gv-zAv"/>
-                                <include reference="pBS-84-Lzd"/>
-                                <include reference="sLp-ir-yDN"/>
-                                <exclude reference="wqp-mp-D0c"/>
+                                <include reference="wlk-Xr-sXn"/>
+                                <include reference="z1C-z2-LLU"/>
+                                <include reference="94a-ka-LFR"/>
+                                <include reference="F0b-7P-XpZ"/>
+                                <include reference="TTA-JO-kLx"/>
                                 <include reference="4yh-jv-HVq"/>
                                 <include reference="WaT-U2-zx6"/>
                                 <exclude reference="exv-S6-ry2"/>
                                 <exclude reference="gZT-FH-AQG"/>
                                 <include reference="qD3-QB-WuD"/>
                                 <include reference="zQV-hx-ErB"/>
-                                <include reference="85L-hT-Z20"/>
-                                <include reference="AOT-9F-sq5"/>
-                                <include reference="ETg-eU-fbe"/>
-                                <exclude reference="FmV-mX-dB7"/>
-                                <include reference="gyU-c3-bKN"/>
+                                <include reference="8RT-JJ-XvT"/>
+                                <include reference="Anh-y0-0ep"/>
+                                <include reference="HE3-E9-TV4"/>
+                                <include reference="oiR-9q-bzo"/>
+                                <include reference="Cgc-pX-GTL"/>
+                                <include reference="Dtu-aH-I9h"/>
+                                <exclude reference="vXO-5h-vZy"/>
+                                <include reference="wqs-UI-d44"/>
+                                <include reference="zxs-Yk-iep"/>
+                                <include reference="Bqe-BD-EsF"/>
+                                <include reference="Ivg-Fh-VdQ"/>
+                                <include reference="quy-tG-dJk"/>
+                                <include reference="tyL-jU-XAB"/>
+                                <exclude reference="xoH-PL-IHT"/>
+                                <include reference="MX8-iB-FBT"/>
+                                <include reference="QZ0-gv-zAv"/>
+                                <include reference="pBS-84-Lzd"/>
+                                <include reference="sLp-ir-yDN"/>
+                                <exclude reference="wqp-mp-D0c"/>
+                                <exclude reference="DZb-fh-6eL"/>
+                                <include reference="OqR-kA-72P"/>
+                                <include reference="TWZ-M4-2WH"/>
+                                <include reference="c1U-Tz-Xa6"/>
+                                <include reference="udf-KV-oqL"/>
+                                <include reference="G1L-s9-l3Y"/>
+                                <include reference="SmO-M6-zme"/>
+                                <include reference="j39-GX-kee"/>
+                                <include reference="joB-lh-dlh"/>
+                                <include reference="djc-ky-QRK"/>
+                                <exclude reference="fB9-FY-YOu"/>
+                                <include reference="r6h-MR-uEW"/>
+                                <include reference="utc-NO-Ot0"/>
+                                <include reference="uxy-s9-Afs"/>
+                                <include reference="AHB-57-Lfq"/>
+                                <include reference="F1s-NH-akj"/>
+                                <exclude reference="SLk-zA-qtx"/>
+                                <include reference="Txp-YE-iMM"/>
+                                <include reference="fHH-Ac-JrW"/>
                                 <include reference="8qs-p8-lxC"/>
                                 <include reference="DTo-RH-rL9"/>
                                 <include reference="WVS-oD-Acw"/>
@@ -732,51 +759,64 @@
                                 <exclude reference="pWp-sC-7Zz"/>
                                 <include reference="tdy-Ta-xaa"/>
                                 <exclude reference="uod-00-P0W"/>
-                                <include reference="G1L-s9-l3Y"/>
-                                <include reference="SmO-M6-zme"/>
-                                <include reference="j39-GX-kee"/>
-                                <include reference="joB-lh-dlh"/>
-                                <exclude reference="DZb-fh-6eL"/>
-                                <include reference="OqR-kA-72P"/>
-                                <include reference="TWZ-M4-2WH"/>
-                                <include reference="c1U-Tz-Xa6"/>
-                                <include reference="udf-KV-oqL"/>
-                                <include reference="wlk-Xr-sXn"/>
-                                <include reference="z1C-z2-LLU"/>
-                                <include reference="8RT-JJ-XvT"/>
-                                <include reference="Anh-y0-0ep"/>
-                                <include reference="HE3-E9-TV4"/>
-                                <include reference="oiR-9q-bzo"/>
-                                <include reference="94a-ka-LFR"/>
-                                <include reference="F0b-7P-XpZ"/>
-                                <include reference="TTA-JO-kLx"/>
-                                <include reference="Cgc-pX-GTL"/>
-                                <include reference="Dtu-aH-I9h"/>
-                                <exclude reference="vXO-5h-vZy"/>
-                                <include reference="wqs-UI-d44"/>
-                                <include reference="zxs-Yk-iep"/>
-                                <include reference="djc-ky-QRK"/>
-                                <exclude reference="fB9-FY-YOu"/>
-                                <include reference="r6h-MR-uEW"/>
-                                <include reference="utc-NO-Ot0"/>
-                                <include reference="uxy-s9-Afs"/>
+                                <include reference="BV1-WM-Geo"/>
+                                <exclude reference="XDm-TV-JN6"/>
+                                <include reference="mso-Kg-7nf"/>
+                                <include reference="tCn-eX-jpj"/>
+                                <include reference="za5-wg-tjg"/>
+                                <include reference="85L-hT-Z20"/>
+                                <include reference="AOT-9F-sq5"/>
+                                <include reference="ETg-eU-fbe"/>
+                                <exclude reference="FmV-mX-dB7"/>
+                                <include reference="gyU-c3-bKN"/>
+                                <include reference="8xg-ot-n8O"/>
+                                <include reference="IE7-rj-IDO"/>
+                                <include reference="TZq-lo-D4K"/>
+                                <include reference="vSk-KB-CqS"/>
+                                <exclude reference="7gL-Rv-Keb"/>
+                                <include reference="bhA-9E-nKu"/>
+                                <include reference="e9J-Yz-wry"/>
+                                <include reference="lw4-dx-hH4"/>
+                                <include reference="zfg-e9-PCC"/>
+                                <include reference="LtY-gI-ojU"/>
+                                <include reference="iK1-7g-7te"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Set Game" id="1ls-bA-ibQ">
-                        <barButtonItem key="leftBarButtonItem" title="Reset" id="0ie-ss-X3W"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="0ie-ss-X3W">
+                            <connections>
+                                <action selector="resetGameButton:" destination="BLh-za-j45" id="RQd-aO-9b6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="history" id="GDE-wf-paL">
                             <connections>
-                                <segue destination="Dpf-Ts-0aS" kind="show" id="9Yg-Gp-hSe"/>
+                                <segue destination="Dpf-Ts-0aS" kind="show" identifier="SetGameHistory" id="iRK-Nu-eHB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="980-gh-bpe" id="sZM-U8-IoN"/>
+                        <outlet property="tipsLabel" destination="bGn-aI-HsU" id="ep7-j4-hlI"/>
+                        <outletCollection property="cardButtons" destination="gwl-4p-hZq" id="XY0-tU-Ebf"/>
+                        <outletCollection property="cardButtons" destination="f5a-2f-xDq" id="Q5E-eg-XfD"/>
+                        <outletCollection property="cardButtons" destination="0cd-Hc-r62" id="Q5e-7x-DNT"/>
+                        <outletCollection property="cardButtons" destination="SDA-8s-Di8" id="Vvc-K9-9xp"/>
+                        <outletCollection property="cardButtons" destination="hJG-Ux-DC3" id="Eue-YD-uTn"/>
+                        <outletCollection property="cardButtons" destination="eHR-0k-0N2" id="ZhE-Nh-ZGb"/>
+                        <outletCollection property="cardButtons" destination="eZ9-9a-LPQ" id="Qsv-iN-uTJ"/>
+                        <outletCollection property="cardButtons" destination="3i3-6r-7TQ" id="CIq-Y5-xDv"/>
+                        <outletCollection property="cardButtons" destination="JZf-rR-lEc" id="wrv-nk-WRQ"/>
+                        <outletCollection property="cardButtons" destination="lEb-19-3Fo" id="Iys-N7-fbD"/>
+                        <outletCollection property="cardButtons" destination="t9B-ud-wbd" id="f6p-X1-Ps5"/>
+                        <outletCollection property="cardButtons" destination="gzj-W6-9ym" id="l0h-QG-mni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuf-tM-t8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456" y="-937"/>
+            <point key="canvasLocation" x="-580.5" y="-937"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PlZ-j7-g2q">
@@ -936,30 +976,30 @@
                     <navigationItem key="navigationItem" title="Card Game" id="iZy-MQ-Deq">
                         <barButtonItem key="leftBarButtonItem" title="Reset" id="M5U-CL-2uH">
                             <connections>
-                                <action selector="resetGameButton:" destination="BYZ-38-t0r" id="U44-BL-mQW"/>
+                                <action selector="resetGameButton:" destination="BYZ-38-t0r" id="PfS-wH-Ljd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="History" id="jhe-5d-hGX">
                             <connections>
-                                <segue destination="Dpf-Ts-0aS" kind="show" identifier="CardGameHistory" id="7dF-L6-ndw"/>
+                                <segue destination="Dpf-Ts-0aS" kind="show" identifier="DeckGameHistory" id="7dF-L6-ndw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cardCanvasScrollView" destination="1aq-9e-909" id="M5C-bx-MhF"/>
-                        <outlet property="cardChooseSegment" destination="7zq-fV-d92" id="f4r-32-wn6"/>
-                        <outlet property="scoreLab" destination="vti-JS-vhN" id="nnY-S3-ftT"/>
-                        <outlet property="tipsLab" destination="Rzz-ts-3vX" id="1t8-Zw-GQO"/>
+                        <outlet property="cardChooseSegment" destination="7zq-fV-d92" id="35Y-Fg-Tlo"/>
+                        <outlet property="scoreLabel" destination="vti-JS-vhN" id="YyB-xY-ePY"/>
+                        <outlet property="tipsLabel" destination="Rzz-ts-3vX" id="SG4-vr-qPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456" y="-270"/>
+            <point key="canvasLocation" x="-580.5" y="-270"/>
         </scene>
         <!--History-->
         <scene sceneID="DcB-6k-jWS">
             <objects>
-                <viewController id="Dpf-Ts-0aS" sceneMemberID="viewController">
+                <viewController id="Dpf-Ts-0aS" customClass="HistoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QFj-aZ-nHc"/>
                         <viewControllerLayoutGuide type="bottom" id="378-OP-FKG"/>
@@ -1041,6 +1081,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="S6o-zX-8nw"/>
+                    <connections>
+                        <outlet property="HistoryTextView" destination="Y4Z-aZ-2A3" id="CQN-Ce-0pP"/>
+                        <outlet property="highestRecordLabel" destination="fj7-Ad-g7f" id="RtI-23-VLq"/>
+                        <outlet property="lowestRecordLabel" destination="N8O-u1-EoO" id="8uX-eH-Nwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ub-XM-RGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1085,10 +1130,7 @@
             <point key="canvasLocation" x="-1374" y="-937"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cardback" width="64" height="96"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Yg-Gp-hSe"/>
+        <segue reference="iRK-Nu-eHB"/>
     </inferredMetricsTieBreakers>
 </document>

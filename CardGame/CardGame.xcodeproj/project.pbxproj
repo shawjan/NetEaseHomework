@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0734391C2E9D0E00414D75 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0734381C2E9D0E00414D75 /* HistoryViewController.m */; };
 		2A08716C1C14234B007559E9 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A08716B1C14234B007559E9 /* Card.m */; };
 		2A0871701C14266D007559E9 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A08716F1C14266D007559E9 /* Deck.m */; };
 		2A0871731C1428EF007559E9 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0871721C1428EF007559E9 /* PlayingCard.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A0734371C2E9D0E00414D75 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		2A0734381C2E9D0E00414D75 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		2A08716A1C14234B007559E9 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		2A08716B1C14234B007559E9 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		2A08716E1C14266D007559E9 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				2AFD4B2B1C1BE86200952199 /* DeckCardGameViewController.m */,
 				2AFD4B2D1C1BE93100952199 /* SetCardGameViewController.h */,
 				2AFD4B2E1C1BE93100952199 /* SetCardGameViewController.m */,
+				2A0734371C2E9D0E00414D75 /* HistoryViewController.h */,
+				2A0734381C2E9D0E00414D75 /* HistoryViewController.m */,
 				2A0ABCCA1C11CAF400FB3FF3 /* Main.storyboard */,
 				2A0ABCCD1C11CAF400FB3FF3 /* Assets.xcassets */,
 				2A0ABCCF1C11CAF400FB3FF3 /* LaunchScreen.storyboard */,
@@ -341,6 +346,7 @@
 				2A0871761C14304E007559E9 /* PlayCardDeck.m in Sources */,
 				2AFD4B201C1BC30B00952199 /* PlayingCardSet.m in Sources */,
 				2A76F68D1C15A84C00486364 /* CardMatchingGame.m in Sources */,
+				2A0734391C2E9D0E00414D75 /* HistoryViewController.m in Sources */,
 				2A0ABCC61C11CAF400FB3FF3 /* AppDelegate.m in Sources */,
 				2A0ABCC31C11CAF400FB3FF3 /* main.m in Sources */,
 				2A76F6901C15B85100486364 /* CardGameViewController.m in Sources */,

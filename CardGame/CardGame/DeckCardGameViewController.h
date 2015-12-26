@@ -9,5 +9,5 @@
 #import "CardGameViewController.h"
 
 @interface DeckCardGameViewController : CardGameViewController
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardChooseSegment;
 @end

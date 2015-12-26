@@ -8,12 +8,15 @@
 
 #import "ViewController.h"
 #import "DropItBehavior.h"
+#import "PathView.h"
 
 
 @interface ViewController ()<UIDynamicAnimatorDelegate>
-@property (weak, nonatomic) IBOutlet UIView *gameView;
+@property (weak, nonatomic) IBOutlet PathView *gameView;
 @property(nonatomic, strong) UIDynamicAnimator *animator;
 @property (nonatomic, strong) DropItBehavior *dropItBehavior;
+@property(nonatomic, strong) UIAttachmentBehavior *attachment;
+@property(nonatomic, strong) UIView *dropView;
 @end
 
 const CGSize Default_Size = {40, 40};
@@ -29,7 +32,7 @@ const CGSize Default_Size = {40, 40};
     return _animator;
 }
 
--(DropItBehavior *)dropItBehavior
+-(DropItBehavior *)dropItBehavior 
 {
     if(!_dropItBehavior){
         _dropItBehavior = [[DropItBehavior alloc] init];
@@ -51,9 +54,42 @@ const CGSize Default_Size = {40, 40};
     frame.origin.x = x *Default_Size.width;
     UIView *view = [[UIView alloc] initWithFrame:frame];
     view.backgroundColor = [self randomColor];
+    self.dropView = view;
     [self.gameView addSubview:view];
     [self.dropItBehavior addItem:view];
+    
+    
 }
+
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint gesturePoint = [sender locationInView:self.gameView];
+    if(sender.state == UIGestureRecognizerStateBegan){
+        [self creatAttachment:gesturePoint];
+    }else if (sender.state == UIGestureRecognizerStateChanged){
+        self.attachment.anchorPoint = gesturePoint;
+    }else if(sender.state == UIGestureRecognizerStateEnded){
+        [self.animator removeBehavior:self.attachment];
+        self.attachment = nil;
+        self.gameView.path = nil;
+    }
+}
+
+-(void)creatAttachment:(CGPoint)anchorPoint
+{
+    self.attachment = [[UIAttachmentBehavior alloc] initWithItem:self.dropView attachedToAnchor:anchorPoint];
+    __weak ViewController *weakSelf = self;
+    UIView *view = self.dropView;
+    self.attachment.action = ^{
+        UIBezierPath *path = [[UIBezierPath alloc] init];
+        [path moveToPoint:weakSelf.attachment.anchorPoint];
+        [path addLineToPoint:view .center];
+        weakSelf.gameView.path = path;
+    };
+    self.dropView = nil;
+    [self.animator addBehavior:self.attachment];
+}
+
+
 
 -(void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {

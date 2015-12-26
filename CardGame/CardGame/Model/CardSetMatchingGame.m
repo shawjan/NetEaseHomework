@@ -7,12 +7,23 @@
 //
 
 #import "CardSetMatchingGame.h"
+#import "PlayingCardSet.h"
 
 @implementation CardSetMatchingGame
 
--(NSString*)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore
+-(id)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore
 {
-    NSString *hisStr = [NSString stringWithFormat:@"%@ for %ld point(s)", matchScore > 0 ? @"matched " : @"didn't match ", matchScore];
+    NSMutableAttributedString *hisStr = [[PlayingCardSet getContents:card] mutableCopy];
+    NSDictionary *dic = @{NSForegroundColorAttributeName: [UIColor blackColor]};
+    NSAttributedString *tmpStr = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",matchScore > 0 ? @"matched " : @"didn't match "]  attributes:dic];
+    [hisStr appendAttributedString:tmpStr];
+    NSAttributedString *joinStr = [[NSAttributedString alloc] initWithString:@" " attributes:nil];
+    for(Card *card in cards){
+        [hisStr appendAttributedString:[PlayingCardSet getContents:card]];
+        [hisStr appendAttributedString:joinStr];
+    }
+    tmpStr = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"for %ld point(s)", matchScore] attributes:dic];
+    [hisStr appendAttributedString:tmpStr];
     return hisStr;
 }
 

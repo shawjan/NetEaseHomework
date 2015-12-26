@@ -1,4 +1,4 @@
-//
+ //
 //  CardGameViewController.m
 //  CardGame
 //
@@ -7,6 +7,7 @@
 //
 
 #import "CardGameViewController.h"
+#import "HistoryViewController.h"
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *CardButtons;
@@ -34,51 +35,38 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
-- (IBAction)CardButton:(UIButton *)sender {
-    self.cardChooseSegment.enabled = NO;
-    NSUInteger index = [self.cardButtonsArray indexOfObject:sender];
-    //[self.game chosenAtIndex:index];
-    [self.game chosenAtIndex:index cardsMatchCount:self.cardChooseSegment.selectedSegmentIndex ? 3 : 2];
+-(void)CardButton:(UIButton *)sender
+{
     [self updateUI];
 }
 
-- (IBAction)resetGameButton:(UIBarButtonItem *)sender {
+- (void)resetGameButton:(UIBarButtonItem *)sender {
     self.card = nil;
     self.game = nil;
-    self.cardChooseSegment.enabled = YES;
     [self updateUI];
 }
 
+
+
+-(UIButton*)setButtonTitle:(UIButton*)button withCard:(Card*)card
+{
+    
+    return button;
+}
 
 - (void)updateUI
 {
    // self.historySlider.value = self.historySlider.maximumValue = [self.game.history count];
-    //self.tipsLab.text = tips;
-    for(int i = 0; i < [self.cardButtonsArray count]; ++i){
-        Card * card = [self.game cardAtIndex:i];
-        UIButton *btn = [self.cardButtonsArray objectAtIndex:i];
-        if(card.chosen){
-            [btn setBackgroundImage:[UIImage imageNamed:@"cardfront"]
-                           forState:UIControlStateNormal];
-            [btn setTitle:card.contents forState:UIControlStateNormal];
-        }else{
-            [btn setBackgroundImage:[UIImage imageNamed:@"cardback"]
-                           forState:UIControlStateNormal];
-            [btn setTitle:@"" forState:UIControlStateNormal];
-        }
-        if(card.matched){
-            btn.enabled = NO;
-        }else{
-            btn.enabled = YES;
-        }
-    }
     self.scoreLab.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
 }
 
@@ -89,8 +77,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if([segue.identifier isEqualToString:@"CardGameHistory"]){
-        
+    if([segue.identifier isEqualToString:@"DeckGameHistory"] || [segue.identifier isEqualToString:@"SetGameHistory"]){
+        HistoryViewController *hisViewCon = (HistoryViewController*)segue.destinationViewController;
+        hisViewCon.history = self.game.history;
+        hisViewCon.highestRecord = self.highestScore.integerValue;
+        hisViewCon.lowestRecord = self.lowestScore.integerValue;
+        hisViewCon.title = segue.identifier;
     }
 }
 

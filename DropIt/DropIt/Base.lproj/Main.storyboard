@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZg-Cu-4he">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZg-Cu-4he" customClass="PathView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="K9k-3h-B5c" appends="YES" id="NaB-cd-L3U"/>
+                                    <outletCollection property="gestureRecognizers" destination="Jy7-Bv-i6X" appends="YES" id="kMx-N3-DnX"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -43,10 +45,10 @@
                                 <exclude reference="jZg-Cu-4he"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="I3X-EL-5K9"/>
                                 <exclude reference="hTg-Tf-0tj"/>
                                 <exclude reference="nM8-10-j6Q"/>
                                 <exclude reference="o5o-Ay-Nbq"/>
-                                <exclude reference="I3X-EL-5K9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -54,10 +56,10 @@
                                 <include reference="jZg-Cu-4he"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="I3X-EL-5K9"/>
                                 <include reference="hTg-Tf-0tj"/>
                                 <include reference="nM8-10-j6Q"/>
                                 <include reference="o5o-Ay-Nbq"/>
-                                <include reference="I3X-EL-5K9"/>
                             </mask>
                         </variation>
                     </view>
@@ -71,6 +73,11 @@
                         <action selector="tapGesture:" destination="BYZ-38-t0r" id="inQ-Au-oH1"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Jy7-Bv-i6X">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="1CH-Ka-Y7O"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="379.5" y="337"/>
         </scene>

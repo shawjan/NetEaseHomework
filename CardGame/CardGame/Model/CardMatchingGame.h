@@ -14,11 +14,13 @@
 @property(nonatomic, readonly) NSInteger score;
 @property(nonatomic, readonly, strong) NSMutableArray *history;
 
+
 -(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck*)deck;
 
 -(void)chosenAtIndex:(NSUInteger)index;
 -(void)chosenAtIndex:(NSUInteger)index cardsMatchCount:(NSUInteger)count;
 -(Card*)cardAtIndex:(NSUInteger)index;
 
+-(id)historyContent:(Card*)card withCards:(NSArray*)cards matchScore:(NSInteger)matchScore;
 
 @end

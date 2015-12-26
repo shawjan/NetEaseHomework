@@ -12,11 +12,22 @@
 
 @property(nonatomic, strong) UIGravityBehavior *gravity;
 @property(nonatomic, strong) UICollisionBehavior *collision;
+@property(nonatomic, strong) UIDynamicItemBehavior *animationOption;
 
 @end
 
 
 @implementation DropItBehavior
+
+
+-(UIDynamicItemBehavior *)animationOption
+{
+    if(!_animationOption){
+        _animationOption = [[UIDynamicItemBehavior alloc] init];
+        _animationOption.allowsRotation = NO;
+    }
+    return _animationOption;
+}
 
 -(UIGravityBehavior *)gravity
 {
@@ -42,6 +53,7 @@
     if(self){
         [self addChildBehavior:self.gravity];
         [self addChildBehavior:self.collision];
+        [self addChildBehavior:self.animationOption];
     }
     return self;
 }
@@ -50,23 +62,15 @@
 {
     [self.gravity addItem:item];
     [self.collision addItem:item];
+    [self.animationOption addItem:item];
 }
 
 - (void)removeItem:(id <UIDynamicItem>)item
 {
     [self.gravity removeItem:item];
     [self.collision removeItem:item];
+    [self.animationOption removeItem:item];
 }
 
-//-(void)addItem:(id <UIDynamicItem>)item
-//{
-//    
-//}
-//
-//
-//-(void)removeItem:(id<UIDynamicItem>)item
-//{
-//    
-//}
 
 @end

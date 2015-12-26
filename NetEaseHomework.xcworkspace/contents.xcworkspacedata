@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:shutterbug/shutterbug.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Photomania/Photomania.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Imaginarium/Imaginarium.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DropIt/DropIt.xcodeproj">
    </FileRef>
    <FileRef

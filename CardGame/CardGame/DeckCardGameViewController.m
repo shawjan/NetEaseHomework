@@ -14,10 +14,60 @@
 @property (strong, nonatomic) CardDeckMatchingGame *deckGame;
 @property (strong, nonatomic) PlayCardDeck *deckCard;
 //@property (weak, nonatomic) IBOutlet UISlider *historySlider;
+@property (weak, nonatomic) IBOutlet UILabel *tipsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *cardCanvasScrollView;
+@property (nonatomic, assign) NSNumber *hScore;
+@property (nonatomic, assign) NSNumber *lScore;
 @end
 
 @implementation DeckCardGameViewController
+
+-(NSNumber*)highestScore
+{
+    return self.hScore;
+}
+
+-(NSNumber*)lowestScore
+{
+    return self.lScore;
+}
+
+NSString *const DeckHighScore = @"DeckCardGameHighestScore";
+NSString *const DeckLowScore = @"DeckCardGamelowestScore";
+-(NSNumber*)hScore
+{
+    _hScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckHighScore];
+    if(!_hScore){
+        _hScore = [NSNumber numberWithInteger:NSIntegerMin];
+    }
+    return _hScore;
+}
+
+-(NSNumber *)lScore
+{
+    _lScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckLowScore];
+    if(!_lScore){
+        _lScore = [NSNumber numberWithInteger:NSIntegerMax];
+    }
+    return _lScore;
+}
+
+-(void)setTipsLab:(UILabel *)tipsLab
+{
+    self.tipsLabel.text = tipsLab.text;
+}
+
+-(void)setScoreLab:(UILabel *)scoreLab
+{
+    self.scoreLabel.text = scoreLab.text;
+}
+
+
+-(UILabel *)scoreLab
+{
+    return self.scoreLabel;
+}
 
 -(CardDeckMatchingGame *)deckGame
 {
@@ -62,13 +112,12 @@ static const NSInteger ButtonHeight = 96;
 -(NSArray*)creatButtons
 {
     NSMutableArray *buttonsArray = [NSMutableArray array];
-    self.cardCanvasScrollView.contentSize = CGSizeMake(ButtonCount / 3 * (ButtonWidth + ButtonGap), self.cardCanvasScrollView.bounds.size.height);
-//    self.cardCanvasScrollView.bounds = CGRectMake(0, 0, self.cardCanvasScrollView.bounds.size.width, self.cardCanvasScrollView.bounds.size.height);
-    NSLog(@"%f %f", self.cardCanvasScrollView.contentInset.top, self.cardCanvasScrollView.contentInset.bottom);
+    NSInteger verticalGap = (self.cardCanvasScrollView.frame.size.width - ButtonWidth * 4) / 3;
+    self.cardCanvasScrollView.contentSize = CGSizeMake(ButtonCount / 3 * (ButtonWidth + verticalGap), self.cardCanvasScrollView.bounds.size.height);
     for(int i = 0; i < 3; ++i){
         for(int j = 0; j < ButtonCount / 3; ++j)
         {
-            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(j * (ButtonGap + ButtonWidth), i * (ButtonGap + ButtonHeight), ButtonWidth, ButtonHeight)];
+            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(j * (verticalGap + ButtonWidth), i * (ButtonGap + ButtonHeight), ButtonWidth, ButtonHeight)];
             [btn addTarget:self action:@selector(CardButton:) forControlEvents:UIControlEventTouchUpInside];
             [btn setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -83,15 +132,75 @@ static NSString *const tips = @"Tips:  Matched J♠︎ and J♣︎ for 4 points;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tipsLab.text = tips;
-    self.cardButtonsArray = [self creatButtons];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if(![self.cardButtonsArray count]){
+        self.cardButtonsArray = [self creatButtons];
+    }
+    self.tipsLabel.text = tips;
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
+
+-(void)CardButton:(UIButton *)sender
+{
+    self.cardChooseSegment.enabled = NO;
+    NSUInteger index = [self.cardButtonsArray indexOfObject:sender];
+    //[self.game chosenAtIndex:index];
+    [self.game chosenAtIndex:index cardsMatchCount:self.cardChooseSegment.selectedSegmentIndex ? 3 : 2];
+    [super CardButton:sender];
+}
+
+-(IBAction)resetGameButton:(UIBarButtonItem *)sender
+{
+    [self saveHighestOrLowestScore];
+    self.cardChooseSegment.enabled = YES;
+    [super resetGameButton:sender];
+}
+
+-(void)saveHighestOrLowestScore
+{
+    if(self.game.score > self.highestScore.integerValue){
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:DeckHighScore];
+    }
+    
+    if(self.game.score < self.lowestScore.integerValue){
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:DeckLowScore];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void)updateUI
+{
+    for(int i = 0; i < [self.cardButtonsArray count]; ++i){
+        Card * card = [self.game cardAtIndex:i];
+        UIButton *btn = [self.cardButtonsArray objectAtIndex:i];
+        if(card.chosen){
+            [btn setBackgroundImage:[UIImage imageNamed:@"cardfront"]
+                           forState:UIControlStateNormal];
+            [btn setTitle:card.contents forState:UIControlStateNormal];
+        }else{
+            [btn setBackgroundImage:[UIImage imageNamed:@"cardback"]
+                           forState:UIControlStateNormal];
+            [btn setTitle:@"" forState:UIControlStateNormal];
+        }
+        if(card.matched){
+            btn.enabled = NO;
+        }else{
+            btn.enabled = YES;
+        }
+    }
+    [super updateUI];
+}
 /*
 #pragma mark - Navigation
 
