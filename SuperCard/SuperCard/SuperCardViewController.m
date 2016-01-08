@@ -16,15 +16,27 @@
 
 @implementation SuperCardViewController
 - (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender {
-    self.superCardView.faceUp = !self.superCardView.faceUp;
+    [UIView transitionWithView:self.superCardView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        self.superCardView.faceUp = !self.superCardView.faceUp;
+                        [self setCardContent];
+                    }completion:nil];
+}
+
+-(void)setCardContent
+{
+    NSInteger sel = arc4random() % 13 + 1;
+    self.superCardView.rank = sel;
+    self.superCardView.suit = @"♥";
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.superCardView.rank = 13;
-    self.superCardView.suit = @"♥︎";
-    
+   
+    [self setCardContent];
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self.superCardView action:@selector(pinchAction:)];
     [self.superCardView addGestureRecognizer:pinchGesture];
 }

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cardback .png",
+      "filename" : "J♥.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cardback.png",
+      "filename" : "J♥@2x.png",
       "scale" : "2x"
     },
     {
