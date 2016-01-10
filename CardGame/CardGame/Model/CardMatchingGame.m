@@ -14,6 +14,8 @@
 @property(nonatomic, strong) NSMutableArray *cardsMutArr;
 @property(nonatomic, assign) NSInteger chooseCardMatch;
 @property(nonatomic, strong, readwrite) NSMutableArray *history;
+@property(nonatomic, assign) NSInteger punishScore;
+@property(nonatomic, assign) NSInteger bonusMultiple;
 @end
 
 @implementation CardMatchingGame
@@ -34,6 +36,23 @@
     return _cardsMutArr;
 }
 
+-(NSInteger)punishScore
+{
+    if(!_punishScore)
+    {
+        _punishScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"PunishScore"];
+    }
+    return _punishScore;
+}
+
+-(NSInteger)bonusMultiple
+{
+    if(!_bonusMultiple){
+        _bonusMultiple = [[NSUserDefaults standardUserDefaults] integerForKey:@"BonusMultiple"];
+    }
+    return _bonusMultiple;
+}
+
 -(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
 {
     self = [super init];
@@ -51,9 +70,6 @@
     return self;
 }
 
-
-static const NSInteger PunishScore = 5;
-static const NSInteger Bonus = 2;
 -(void)chosenAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
@@ -71,13 +87,13 @@ static const NSInteger Bonus = 2;
             if([otherCards count] + 1 == self.chooseCardMatch){
                 NSInteger matchScore = [card matchedOrNot:otherCards];
                 if(matchScore){
-                    self.score += matchScore * Bonus;
+                    self.score += matchScore * self.bonusMultiple;
                     card.matched = YES;
                     for (Card *otherCard in otherCards) {
                         otherCard.matched = YES;
                     }
                 }else{
-                    self.score -= PunishScore;
+                    self.score -= self.punishScore;
                     card.chosen = NO;
                     for(Card *otherCard in otherCards){
                         otherCard.chosen = NO;
@@ -85,7 +101,7 @@ static const NSInteger Bonus = 2;
                 }
                 [self.history addObject:[self historyContent:card
                                                    withCards:otherCards
-                                                  matchScore:matchScore ? matchScore * Bonus : 0 - PunishScore]];
+                                                  matchScore:matchScore ? matchScore * self.bonusMultiple : 0 - self.punishScore]];
             }
             card.chosen = YES;
         }

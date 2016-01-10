@@ -68,6 +68,8 @@
 {
    // self.historySlider.value = self.historySlider.maximumValue = [self.game.history count];
     self.scoreLab.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
+    self.highestScore = [NSNumber numberWithInteger:self.game.score];
+    self.lowestScore = [NSNumber numberWithInteger:self.game.score];
 }
 
 

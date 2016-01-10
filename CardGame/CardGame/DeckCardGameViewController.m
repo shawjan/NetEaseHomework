@@ -33,25 +33,41 @@
     return self.lScore;
 }
 
+-(void)setHighestScore:(NSNumber*)highestScore
+{
+    if(highestScore.integerValue > self.hScore.integerValue){
+        self.hScore = highestScore;
+    }
+}
+
+-(void)setLowestScore:(NSNumber*)LowestScore
+{
+    if(LowestScore.integerValue < self.lScore.integerValue){
+        self.lScore = LowestScore;
+    }
+}
+
 NSString *const DeckHighScore = @"DeckCardGameHighestScore";
 NSString *const DeckLowScore = @"DeckCardGamelowestScore";
 -(NSNumber*)hScore
 {
-    _hScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckHighScore];
+    //_hScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckHighScore];
     if(!_hScore){
-        _hScore = [NSNumber numberWithInteger:NSIntegerMin];
+        _hScore = [NSNumber numberWithInteger:0];
     }
     return _hScore;
 }
 
 -(NSNumber *)lScore
 {
-    _lScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckLowScore];
+    //_lScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckLowScore];
     if(!_lScore){
-        _lScore = [NSNumber numberWithInteger:NSIntegerMax];
+        _lScore = [NSNumber numberWithInteger:0];
     }
     return _lScore;
 }
+
+
 
 -(void)setTipsLab:(UILabel *)tipsLab
 {
@@ -169,14 +185,15 @@ static NSString *const tips = @"Tips:  Matched J♠︎ and J♣︎ for 4 points;
 
 -(void)saveHighestOrLowestScore
 {
-    if(self.game.score > self.highestScore.integerValue){
+    NSNumber *deckGameHeightScore = [[NSUserDefaults standardUserDefaults] objectForKey:DeckHighScore];
+    if(self.game.score > deckGameHeightScore.integerValue){
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:DeckHighScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
-    if(self.game.score < self.lowestScore.integerValue){
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:DeckLowScore];
-    }
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    if(self.game.score < self.lowestScore.integerValue){
+//        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:DeckLowScore];
+//    }
+    self.lScore = self.hScore = 0;
 }
 
 -(void)updateUI

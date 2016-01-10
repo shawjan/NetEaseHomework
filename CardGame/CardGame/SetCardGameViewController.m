@@ -23,7 +23,6 @@
 
 @implementation SetCardGameViewController
 
-
 -(void)setScoreLab:(UILabel *)scoreLab
 {
     self.scoreLabel.text = scoreLab.text;
@@ -84,22 +83,36 @@
     return self.lScore;
 }
 
+-(void)setHighestScore:(NSNumber*)highestScore
+{
+    if(highestScore.integerValue > self.hScore.integerValue){
+        self.hScore = highestScore;
+    }
+}
+
+-(void)setLowestScore:(NSNumber*)LowestScore
+{
+    if(LowestScore.integerValue < self.lScore.integerValue){
+        self.lScore = LowestScore;
+    }
+}
+
 NSString *const SetHighScore = @"SetCardGameHighestScore";
 NSString *const SetLowScore = @"SetCardGamelowestScore";
 -(NSNumber*)hScore
 {
-    _hScore = [[NSUserDefaults standardUserDefaults] objectForKey:SetHighScore];
+    //_hScore = [[NSUserDefaults standardUserDefaults] objectForKey:SetHighScore];
     if(!_hScore){
-        _hScore = [NSNumber numberWithInteger:NSIntegerMin];
+        _hScore = [NSNumber numberWithInteger:0];
     }
     return _hScore;
 }
 
 -(NSNumber *)lScore
 {
-    _lScore = [[NSUserDefaults standardUserDefaults] objectForKey:SetLowScore];
+    //_lScore = [[NSUserDefaults standardUserDefaults] objectForKey:SetLowScore];
     if(!_lScore){
-        _lScore = [NSNumber numberWithInteger:NSIntegerMax];
+        _lScore = [NSNumber numberWithInteger:0];
     }
     return _lScore;
 }
@@ -145,14 +158,15 @@ static NSString *const setTips = @"Tips:  if whole cards the same properties are
 
 -(void)saveHighestOrLowestScore
 {
-    if(self.game.score > self.highestScore.integerValue){
+    NSNumber *setGameHeightScore = [[NSUserDefaults standardUserDefaults] objectForKey:SetHighScore];
+    if(self.game.score > setGameHeightScore.integerValue){
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:SetHighScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
-    if(self.game.score < self.lowestScore.integerValue){
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:SetLowScore];
-    }
-    [[NSUserDefaults standardUserDefaults] synchronize];
+//    if(self.game.score < self.lowestScore.integerValue){
+//        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.game.score] forKey:SetLowScore];
+//    }
+    self.lScore = self.hScore = 0;
 }
 
 -(void)updateUI

@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if(![[NSUserDefaults standardUserDefaults] integerForKey:@"PunishScore"]){
+        [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"PunishScore"];
+    }
+    if(![[NSUserDefaults standardUserDefaults] integerForKey:@"BonusMultiple"])
+    {
+        [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"BonusMultiple"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
     return YES;
 }
 

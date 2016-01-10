@@ -17,7 +17,7 @@
     NSDictionary *dic = @{NSForegroundColorAttributeName: [UIColor blackColor]};
     NSAttributedString *tmpStr = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",matchScore > 0 ? @"matched " : @"didn't match "]  attributes:dic];
     [hisStr appendAttributedString:tmpStr];
-    NSAttributedString *joinStr = [[NSAttributedString alloc] initWithString:@" " attributes:nil];
+    NSAttributedString *joinStr = [[NSAttributedString alloc] initWithString:@"," attributes:nil];
     for(Card *card in cards){
         [hisStr appendAttributedString:[PlayingCardSet getContents:card]];
         [hisStr appendAttributedString:joinStr];

@@ -15,8 +15,8 @@
 @property (strong, nonatomic) NSArray *cardButtonsArray;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) UILabel *scoreLab;
-@property(nonatomic, readonly) NSNumber *highestScore;
-@property(nonatomic, readonly) NSNumber *lowestScore;
+@property(nonatomic, readwrite) NSNumber *highestScore;
+@property(nonatomic, readwrite) NSNumber *lowestScore;
 
 - (void)CardButton:(UIButton *)sender;
 - (void)resetGameButton:(UIBarButtonItem *)sender;
