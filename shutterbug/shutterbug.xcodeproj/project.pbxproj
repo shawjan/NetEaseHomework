@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		2A123ED71C285A3B00C0D6E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A123ED61C285A3B00C0D6E4 /* main.m */; };
 		2A123EDA1C285A3B00C0D6E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A123ED91C285A3B00C0D6E4 /* AppDelegate.m */; };
-		2A123EDD1C285A3B00C0D6E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A123EDC1C285A3B00C0D6E4 /* ViewController.m */; };
-		2A123EE01C285A3B00C0D6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A123EDE1C285A3B00C0D6E4 /* Main.storyboard */; };
+		2A123EE01C285A3B00C0D6E4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A123EDE1C285A3B00C0D6E4 /* Main_iPhone.storyboard */; };
 		2A123EE21C285A3B00C0D6E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A123EE11C285A3B00C0D6E4 /* Assets.xcassets */; };
 		2A123EE51C285A3B00C0D6E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A123EE31C285A3B00C0D6E4 /* LaunchScreen.storyboard */; };
 		2A123EF01C285A3B00C0D6E4 /* shutterbugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A123EEF1C285A3B00C0D6E4 /* shutterbugTests.m */; };
 		2A123EFB1C285A3B00C0D6E4 /* shutterbugUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A123EFA1C285A3B00C0D6E4 /* shutterbugUITests.m */; };
-		5D3B4ACE1C5E1093326B9336 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 407D5D6C60384A96833A5510 /* libPods.a */; };
+		2A5935811C44F63700E53F03 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5935801C44F63700E53F03 /* ImageViewController.m */; };
+		2A5935C51C4502D800E53F03 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5935C41C4502D800E53F03 /* FlickrFetcher.m */; };
+		2A5935C81C451F2400E53F03 /* FlickrPhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5935C71C451F2400E53F03 /* FlickrPhotoTableViewController.m */; };
+		2A5935CE1C451FAD00E53F03 /* RecentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5935CD1C451FAD00E53F03 /* RecentTableViewController.m */; };
+		2A5935D21C452E4700E53F03 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5935D11C452E4700E53F03 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +43,7 @@
 		2A123ED61C285A3B00C0D6E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A123ED81C285A3B00C0D6E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2A123ED91C285A3B00C0D6E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2A123EDB1C285A3B00C0D6E4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2A123EDC1C285A3B00C0D6E4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2A123EDF1C285A3B00C0D6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A123EDF1C285A3B00C0D6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2A123EE11C285A3B00C0D6E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A123EE41C285A3B00C0D6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A123EE61C285A3B00C0D6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,9 +53,16 @@
 		2A123EF61C285A3B00C0D6E4 /* shutterbugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shutterbugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A123EFA1C285A3B00C0D6E4 /* shutterbugUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shutterbugUITests.m; sourceTree = "<group>"; };
 		2A123EFC1C285A3B00C0D6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		407D5D6C60384A96833A5510 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3F6FB9420A73355FBB502FE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DDD8C0AB479D2E50B4DC37FF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2A59357F1C44F63700E53F03 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		2A5935801C44F63700E53F03 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		2A5935C21C4502D800E53F03 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		2A5935C31C4502D800E53F03 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		2A5935C41C4502D800E53F03 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		2A5935C61C451F2400E53F03 /* FlickrPhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoTableViewController.h; sourceTree = "<group>"; };
+		2A5935C71C451F2400E53F03 /* FlickrPhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoTableViewController.m; sourceTree = "<group>"; };
+		2A5935CC1C451FAD00E53F03 /* RecentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentTableViewController.h; sourceTree = "<group>"; };
+		2A5935CD1C451FAD00E53F03 /* RecentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentTableViewController.m; sourceTree = "<group>"; };
+		2A5935D11C452E4700E53F03 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3B4ACE1C5E1093326B9336 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,8 +97,6 @@
 				2A123EEE1C285A3B00C0D6E4 /* shutterbugTests */,
 				2A123EF91C285A3B00C0D6E4 /* shutterbugUITests */,
 				2A123ED31C285A3B00C0D6E4 /* Products */,
-				E36599F95E4F9E957DD3C7D3 /* Pods */,
-				8A244A18AED77F7EF2109BE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,11 +113,17 @@
 		2A123ED41C285A3B00C0D6E4 /* shutterbug */ = {
 			isa = PBXGroup;
 			children = (
+				2A5935C11C4502D800E53F03 /* FlickrFetcher */,
 				2A123ED81C285A3B00C0D6E4 /* AppDelegate.h */,
 				2A123ED91C285A3B00C0D6E4 /* AppDelegate.m */,
-				2A123EDB1C285A3B00C0D6E4 /* ViewController.h */,
-				2A123EDC1C285A3B00C0D6E4 /* ViewController.m */,
-				2A123EDE1C285A3B00C0D6E4 /* Main.storyboard */,
+				2A59357F1C44F63700E53F03 /* ImageViewController.h */,
+				2A5935801C44F63700E53F03 /* ImageViewController.m */,
+				2A5935C61C451F2400E53F03 /* FlickrPhotoTableViewController.h */,
+				2A5935C71C451F2400E53F03 /* FlickrPhotoTableViewController.m */,
+				2A5935CC1C451FAD00E53F03 /* RecentTableViewController.h */,
+				2A5935CD1C451FAD00E53F03 /* RecentTableViewController.m */,
+				2A123EDE1C285A3B00C0D6E4 /* Main_iPhone.storyboard */,
+				2A5935D11C452E4700E53F03 /* Main_iPad.storyboard */,
 				2A123EE11C285A3B00C0D6E4 /* Assets.xcassets */,
 				2A123EE31C285A3B00C0D6E4 /* LaunchScreen.storyboard */,
 				2A123EE61C285A3B00C0D6E4 /* Info.plist */,
@@ -147,21 +158,14 @@
 			path = shutterbugUITests;
 			sourceTree = "<group>";
 		};
-		8A244A18AED77F7EF2109BE5 /* Frameworks */ = {
+		2A5935C11C4502D800E53F03 /* FlickrFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				407D5D6C60384A96833A5510 /* libPods.a */,
+				2A5935C21C4502D800E53F03 /* FlickrAPIKey.h */,
+				2A5935C31C4502D800E53F03 /* FlickrFetcher.h */,
+				2A5935C41C4502D800E53F03 /* FlickrFetcher.m */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E36599F95E4F9E957DD3C7D3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DDD8C0AB479D2E50B4DC37FF /* Pods.debug.xcconfig */,
-				A3F6FB9420A73355FBB502FE /* Pods.release.xcconfig */,
-			);
-			name = Pods;
+			path = FlickrFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +175,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A123EFF1C285A3B00C0D6E4 /* Build configuration list for PBXNativeTarget "shutterbug" */;
 			buildPhases = (
-				E8E33A58FBF561FFE9F9FB95 /* Check Pods Manifest.lock */,
 				2A123ECE1C285A3B00C0D6E4 /* Sources */,
 				2A123ECF1C285A3B00C0D6E4 /* Frameworks */,
 				2A123ED01C285A3B00C0D6E4 /* Resources */,
-				D350992FB56BFAD610171849 /* Embed Pods Frameworks */,
-				83E160E43746014B2965E357 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,9 +271,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5935D21C452E4700E53F03 /* Main_iPad.storyboard in Resources */,
 				2A123EE51C285A3B00C0D6E4 /* LaunchScreen.storyboard in Resources */,
 				2A123EE21C285A3B00C0D6E4 /* Assets.xcassets in Resources */,
-				2A123EE01C285A3B00C0D6E4 /* Main.storyboard in Resources */,
+				2A123EE01C285A3B00C0D6E4 /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,62 +294,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		83E160E43746014B2965E357 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D350992FB56BFAD610171849 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8E33A58FBF561FFE9F9FB95 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2A123ECE1C285A3B00C0D6E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A123EDD1C285A3B00C0D6E4 /* ViewController.m in Sources */,
+				2A5935C81C451F2400E53F03 /* FlickrPhotoTableViewController.m in Sources */,
+				2A5935811C44F63700E53F03 /* ImageViewController.m in Sources */,
+				2A5935CE1C451FAD00E53F03 /* RecentTableViewController.m in Sources */,
 				2A123EDA1C285A3B00C0D6E4 /* AppDelegate.m in Sources */,
 				2A123ED71C285A3B00C0D6E4 /* main.m in Sources */,
+				2A5935C51C4502D800E53F03 /* FlickrFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,12 +340,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A123EDE1C285A3B00C0D6E4 /* Main.storyboard */ = {
+		2A123EDE1C285A3B00C0D6E4 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2A123EDF1C285A3B00C0D6E4 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		2A123EE31C285A3B00C0D6E4 /* LaunchScreen.storyboard */ = {
@@ -486,9 +443,9 @@
 		};
 		2A123F001C285A3B00C0D6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDD8C0AB479D2E50B4DC37FF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (X4XM2T4X6D)";
 				INFOPLIST_FILE = shutterbug/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,9 +456,9 @@
 		};
 		2A123F011C285A3B00C0D6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3F6FB9420A73355FBB502FE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (X4XM2T4X6D)";
 				INFOPLIST_FILE = shutterbug/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

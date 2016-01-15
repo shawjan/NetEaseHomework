@@ -218,13 +218,13 @@
                                 <exclude reference="PAJ-a3-Vs7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="OXc-4O-Znl"/>
+                                <exclude reference="IpT-jI-i9r"/>
+                                <exclude reference="rDg-L7-BIy"/>
                                 <exclude reference="28y-dp-9g7"/>
                                 <exclude reference="6wT-Cd-EJE"/>
                                 <exclude reference="A2t-fR-MH7"/>
                                 <exclude reference="iQ9-AE-FXn"/>
-                                <exclude reference="IpT-jI-i9r"/>
-                                <exclude reference="rDg-L7-BIy"/>
-                                <exclude reference="OXc-4O-Znl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -233,13 +233,13 @@
                                 <include reference="PAJ-a3-Vs7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="OXc-4O-Znl"/>
+                                <include reference="IpT-jI-i9r"/>
+                                <include reference="rDg-L7-BIy"/>
                                 <include reference="28y-dp-9g7"/>
                                 <include reference="6wT-Cd-EJE"/>
                                 <exclude reference="A2t-fR-MH7"/>
                                 <include reference="iQ9-AE-FXn"/>
-                                <include reference="IpT-jI-i9r"/>
-                                <include reference="rDg-L7-BIy"/>
-                                <include reference="OXc-4O-Znl"/>
                             </mask>
                         </variation>
                     </view>
